@@ -1,0 +1,7 @@
+.colorRow {
+    background-color: red;
+}
+
+.colorRow.yellow{
+    background-color: yellow;
+}
