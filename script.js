@@ -11,23 +11,18 @@ function onReady() {
 function clickHandler() {
     console.log('Generate Button was clicked');
     coloredRow();
-    buttonCounter();
     
 }
 
 function coloredRow() {
     $('body').append('<div class="colorRow"></div>');
     $('.colorRow').append('<button id="swapButton">Swap</button>', '<button id="deleteButton">Delete</button>');
-    $('.colorRow').append('<p class="counter"></p>');
+    $('.colorRow').append('<p>' + ++count + '</p>');
     $('#swapButton').on('click', swapColor);
-    $('#deleteButton').on('click', deleteDiv);
+    $('body').on('click','.deleteButton', deleteDiv);
 
 }
 
-function buttonCounter() {
-    $('.counter').text(++count);
-
-}
 
 function swapColor() {
     console.log('Swap Button was clicked');
@@ -39,9 +34,16 @@ function swapColor() {
 }
 
 function deleteDiv() {
+    console.log('delete button clicked');
     const rowToDelete = $(this).closest('.colorRow'); 
     rowToDelete.remove();
 }
+
+    
+
+
+
+
 
     
 
